@@ -13,9 +13,16 @@
 @end
 
 @implementation ViewController
-
+@synthesize MyInternet;
 - (void)viewDidLoad
 {
+    //1. this sets up the Url that you want to display
+    NSURL *url = [NSURL URLWithString:@"http://www.yahoo.com"];
+    //2. this is a url request to grab http headers & cachesetting
+    NSURLRequest *dereq = [NSURLRequest requestWithURL:url];
+    //3. load url & the url request
+    [MyInternet loadRequest:dereq];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
